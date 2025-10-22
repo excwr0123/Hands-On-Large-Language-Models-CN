@@ -1,5 +1,5 @@
 from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 
@@ -25,4 +25,4 @@ vectorstore = Chroma.from_documents(
     persist_directory="./chroma_db",  # 持久化存储路径
 )
 
-print(f"成功将 {len(splits)} 个文本块存入向量数据库")
+print(f"Successfully stored {len(splits)} text blocks into the vector database.")
