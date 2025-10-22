@@ -1,4 +1,5 @@
-from langchain.embeddings import OpenAIEmbeddings
+#from langchain.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
@@ -12,7 +13,7 @@ embeddings = OpenAIEmbeddings(
 vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
 
 # 2. 用户提问
-query = "什么是RAG？"
+query = "what is LLM？"
 
 # 3. 检索相关文档（返回最相关的 3 个）
 docs = vectorstore.similarity_search(query, k=3)

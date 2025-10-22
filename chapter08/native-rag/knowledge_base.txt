@@ -1,4 +1,4 @@
-RAG 的的本质是：增强 System Prompt 的上下文，从而生成更符合实际要求的回复。
+RAG 的本质是：增强 System Prompt 的上下文，从而生成更符合实际要求的回复。
 RAG is a technique called Retrieval-Augmented Generation, which improves AI models by having them retrieve information from an external knowledge base before generating a response. 
 This allows the AI to access current, private, or specialized data beyond its original training set, making its answers more accurate, relevant, and trustworthy. 
 Instead of just recalling its pre-trained data, the AI uses the retrieved information to "augment" or enhance its response.  

@@ -9,12 +9,14 @@ documents = loader.load()
 
 # 2. 文本切分
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=500,  # 每个文本块的大小
-    chunk_overlap=50,  # 文本块之间的重叠部分
+    chunk_size=500,  # 每个文本块的大小 防止embedding 超过长度限制
+    chunk_overlap=50,  # 文本块之间的重叠部分，保证语义连续
 )
 splits = text_splitter.split_documents(documents)
 
 # 3. 向量化并存储
+# export OPENAI_API_KEY="sk-vdzbnwjbdahllnmzbuzbubsvcunbvbnowsqzowbevqgxkxpx" 
+#把文本块转成向量 
 embeddings = OpenAIEmbeddings(
     base_url="https://api.siliconflow.cn/v1",
     model="Qwen/Qwen3-Embedding-0.6B",
